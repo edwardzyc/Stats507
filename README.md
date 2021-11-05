@@ -17,6 +17,9 @@ first we navigate to the repo folder and then
     git status  
     git push  
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0cab262720cad14b7757b99c3ad7416511449a38
 
 
