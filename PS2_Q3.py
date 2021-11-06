@@ -26,7 +26,7 @@ pathI=r'C:\Users\chen3\Desktop\Academic\Umich\Y2S1\STATS 507\Homework\Homework I
 pathJ=r'C:\Users\chen3\Desktop\Academic\Umich\Y2S1\STATS 507\Homework\Homework II\Data\DEMO_J.XPT'
 
 # +
-columns_to_keep=['SEQN','RIDAGEYR','RIDRETH3','DMDEDUC2','DMDMARTL',
+columns_to_keep=['SEQN','RIDAGEYR','RIAGENDR','RIDRETH3','DMDEDUC2','DMDMARTL',
                  'RIDSTATR','SDMVPSU', 'SDMVSTRA', 'WTMEC2YR', 'WTINT2YR']
 dfG = pd.read_sas(pathG)
 dfG=dfG[columns_to_keep]
@@ -59,7 +59,13 @@ df1=df1.rename(columns={'SEQN':'sequence number',
                         'WTMEC2YR':'Full sample 2 year MEC exam weight'.lower(),
                         'WTINT2YR':'Full sample 2 year interview weight'.lower()})
 
+
+
 # +
+df1['gender'] = pd.Categorical(df1['gender'].replace({1:'Male',
+                                                                   2:'Female'}))
+                                                                   
+
 df1['race and ethnicity'] = pd.Categorical(df1['race and ethnicity'].replace({1:'Mexican American',
                                                                    2:'Other Hispanic',
                                                                    3: 'Non-Hispanic White',
