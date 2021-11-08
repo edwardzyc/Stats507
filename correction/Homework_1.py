@@ -49,6 +49,24 @@
 # if the calculation is correct there should be a "True" in the output
 
 def fib_rec(n,a=0,b=1):
+    """
+    
+
+    Parameters
+    ----------
+    n : int
+        the number of the fibonachi sequence
+    a : int, optional
+        the starting number, the first of the sequence. The default is 0.
+    b : int, optional
+        the starting number, the scend of the sequence. The default is 1.
+
+    Returns
+    -------
+    TYPE
+        the n-th number of the fibonachi sequence.
+
+    """
     if n==0 :
         return a
     if n==1:
@@ -65,6 +83,19 @@ print("the Test for F_7: correctly calculated as 13 {} \
 
 # +
 def fib_for(n):
+    """
+    
+
+    Parameters
+    ----------
+    n : int
+        the number of the fibonachi sequence
+    Returns
+    -------
+    TYPE
+        the n-th number of the fibonachi sequence.
+
+    """
     num_zero=0
     num_one=1
     sequencelst=[0,1]
@@ -89,6 +120,20 @@ print("the Test for F_7: correctly calculated as 13 {} \
 
 # +
 def fib_whl(n):
+    """
+    
+
+    Parameters
+    ----------
+    n : int
+        the number of the fibonachi sequence
+
+    Returns
+    -------
+    TYPE
+        the n-th number of the fibonachi sequence.
+
+    """
     num_zero=0
     num_one=1
     temp_sum=0
@@ -118,6 +163,19 @@ print("the Test for F_7: correctly calculated as 13 {} \
 
 # +
 def fib_rnd(n):
+    """
+    
+
+    Parameters
+    ----------
+    n : int
+        the number of the fibonachi sequence
+    Returns
+    -------
+    TYPE
+        the n-th number of the fibonachi sequence.
+
+    """
     import numpy as np
     phi = 1/2*(np.sqrt(5)+1)
     return round((phi**n/np.sqrt(5)))
@@ -134,6 +192,19 @@ print("the Test for F_7: correctly calculated as 13 {} \
 
 # +
 def fib_flr(n):
+    """
+    
+
+    Parameters
+    ----------
+    n : int
+        the number of the fibonachi sequence
+    Returns
+    -------
+    TYPE
+        the n-th number of the fibonachi sequence.
+
+    """
     import numpy as np
     phi = 1/2*(np.sqrt(5)+1)
     return np.floor(phi**n/np.sqrt(5)+1/2)
@@ -314,6 +385,20 @@ display(df)
 # $\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n!}{k!*(n-k)!}$
 
 def pas_row(n):
+    """
+    
+
+    Parameters
+    ----------
+    n : int
+        the number of rows in an triangle.
+
+    Returns
+    -------
+    String
+        the triangle in the form of sting .
+
+    """
     import numpy as np 
     string=''
     if n == 1:
@@ -345,6 +430,28 @@ from itables import show
 
 arry=np.array(range(111))
 def ci_cal(array,ci,form='string'):
+    """
+    
+
+    Parameters
+    ----------
+    array : nparray
+        the array we want to work on .
+    ci : float
+        the confidence interval that wish to be calculated
+        in the form of a float in [0,1].
+    form : string, optional
+        the output format. The default is 'string'.
+
+    Returns
+    -------
+    stirng or dictionary
+        returns the basic information about the CI calculation
+        it can be a string or a dictionary that contains all the 
+        necessary information about the CI, it is control by 
+        the variable in the function.
+
+    """
     import numpy as np
     import scipy.stats        
     if type(array) != type(np.array(1)):
@@ -375,6 +482,29 @@ def ci_cal(array,ci,form='string'):
 # in this part the normal distribution 
 
 def binorm(array,ci,form='string'):
+    """
+    
+
+    Parameters
+    ----------
+    array : nparray
+        the array we want to work on .
+    ci : float
+        the confidence interval that wish to be calculated
+        in the form of a float in [0,1].
+    form : string, optional
+        the output format. The default is 'string'.
+
+    Returns
+    -------
+    stirng or dictionary
+        returns the basic information about the CI calculation
+        it can be a string or a dictionary that contains all the 
+        necessary information about the CI, it is control by 
+        the variable in the function.
+
+    """
+    
     # first we need to do the testing 
     import numpy as np
     import scipy.stats
@@ -408,6 +538,28 @@ def binorm(array,ci,form='string'):
 # the Clopper-Person interval 
 
 def binorm_Clopper(array,ci,form='string'):
+    """
+    
+
+    Parameters
+    ----------
+    array : nparray
+        the array we want to work on .
+    ci : float
+        the confidence interval that wish to be calculated
+        in the form of a float in [0,1].
+    form : string, optional
+        the output format. The default is 'string'.
+
+    Returns
+    -------
+    stirng or dictionary
+        returns the basic information about the CI calculation
+        it can be a string or a dictionary that contains all the 
+        necessary information about the CI, it is control by 
+        the variable in the function.
+
+    """
     import numpy as np
     import scipy.stats
     if type(array) != type(np.array(1)):
@@ -438,6 +590,28 @@ def binorm_Clopper(array,ci,form='string'):
 # the Jefferey's interval
 
 def binorm_Jeffery(array,ci,form='string'):
+    """
+    
+
+    Parameters
+    ----------
+    array : nparray
+        the array we want to work on .
+    ci : float
+        the confidence interval that wish to be calculated
+        in the form of a float in [0,1].
+    form : string, optional
+        the output format. The default is 'string'.
+
+    Returns
+    -------
+    stirng or dictionary
+        returns the basic information about the CI calculation
+        it can be a string or a dictionary that contains all the 
+        necessary information about the CI, it is control by 
+        the variable in the function.
+
+    """
     import numpy as np
     import scipy.stats
     if type(array) != type(np.array(1)):
@@ -467,6 +641,28 @@ def binorm_Jeffery(array,ci,form='string'):
 # Agresti-Coull interval 
 
 def binorm_Agresti(array,ci,form='string'):
+    """
+    
+
+    Parameters
+    ----------
+    array : nparray
+        the array we want to work on .
+    ci : float
+        the confidence interval that wish to be calculated
+        in the form of a float in [0,1].
+    form : string, optional
+        the output format. The default is 'string'.
+
+    Returns
+    -------
+    stirng or dictionary
+        returns the basic information about the CI calculation
+        it can be a string or a dictionary that contains all the 
+        necessary information about the CI, it is control by 
+        the variable in the function.
+
+    """
     import numpy as np
     import scipy.stats
     if type(array) != type(np.array(1)):
